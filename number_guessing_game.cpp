@@ -5,31 +5,36 @@
 using namespace std;
 
 
-
-    
-      
-
-
-
-
 int main(){
     srand(time(0));
 
     int userNum, randNum;
 
-    randNum = rand() % 100;
+    randNum = rand() % 100 + 1;
+    int compGuess = randNum;
+    cout<<"Computer Guess : "<<randNum<<endl;
 
+    bool isGuessed = true;
 
-    cout<<"Enter a number : "<<endl;
-    cin>>userNum;
+    while (isGuessed)
+    {
+        cout<<"Enter a number : ";
+        cin>>userNum;
 
-     int compGuess = randNum;
-     cout<<"Computer Guess : "<<randNum<<endl;
-
-
-
-  
-    
+        if(userNum == randNum){
+            cout<<"You won the Game !"<<endl;
+            isGuessed=false;
+        }
+        else if(userNum > randNum){
+            cout<<"The number is  higher"<<endl;
+        }
+        else if(userNum < randNum){
+            cout<<"The number is low"<<endl;
+        }
+        else{
+            cout<<"invalid entery"<<endl;
+        }
+    }
 
 	return 0;
 }
